@@ -1,8 +1,18 @@
 require('./bootstrap');
-
 window.Vue = require('vue');
 
+// Vuex
 import Vue from 'vue';
+import Vuex from 'vuex';
+Vue.use(Vuex);
+
+
+import storeData from './store/index';
+const store =  new Vuex.Store(
+    storeData
+    );
+
+// vue-router
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
@@ -10,6 +20,8 @@ import {routes} from "./routes";
 // Vue.component('home', require('./components/admin/AdminHome').default);
 Vue.component('admin-master', require('./components/admin/AdminMaster').default);
 
+
+//v-form
 import { Form, HasError, AlertError } from 'vform';
 
 
@@ -18,6 +30,12 @@ Vue.component(AlertError.name, AlertError);
 
 window.Form =Form;
 
+//filters
+
+ import {filter} from './filter';
+
+
+//sweet alert
 import Swal from 'sweetalert2';
 window.Swal= Swal;
 
@@ -39,5 +57,6 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    store
 });

@@ -12,7 +12,7 @@
                             </div>
 
                             <!-- form start -->
-                            <form role="form" @click.prevent="addCategory()">
+                            <form role="form" @submit.prevent="addCategory()">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputCategory">Add New Category</label>
@@ -60,7 +60,7 @@
 
                         toast.fire({
                             icon: 'success',
-                            title: 'Signed in successfully'
+                            title: 'Created in successfully'
                         })
                     })
                     .catch(() => {

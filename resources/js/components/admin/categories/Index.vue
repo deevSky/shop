@@ -10,7 +10,9 @@
                                 <h3 class="card-title">Categories</h3>
 
                                 <div class="card-tools">
-                                    <router-link class="btn btn-primary btn-sm" to="/category-create" style="color: white">Add new category</router-link>
+                                    <router-link class="btn btn-primary btn-sm" to="/category-create"
+                                                 style="color: white">Add new category
+                                    </router-link>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -19,45 +21,62 @@
                                     <thead>
                                     <tr>
                                         <th>List</th>
-                                        <th>Category name</th>
+                                        <th>Category</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 4.0
-                                        </td>
+                                    <tr v-for="(category, index) in getAllCategory" :key="category.id">
+                                        <td>{{ index + 1 }}</td>
+                                        <td>{{ category.category_name }}</td>
+                                        <td>{{ category.created_at | timeformat }}</td>
                                         <td>
-                                            <a href="">Edit</a>
-                                            <a href="">Delete</a>
+                                            <router-link :to="`/category-edit/${category.id}`">Edit</router-link>
+                                            <a href="" @click.prevent="deleteCategory(category.id)">Delete</a>
                                         </td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
         </section>
-        <!-- /.content -->
-    </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Index"
+        name: "Index",
+
+        mounted() {
+            this.$store.dispatch('allCategory')
+        },
+
+        computed: {
+            getAllCategory() {
+                 return this.$store.getters.getCategory
+            }
+        },
+
+        methods: {
+            deleteCategory(id){
+                axios.get('category/' + id + '/delete' )
+                    .then(() => {
+                        this.$store.dispatch('allCategory')
+                        toast.fire({
+                            icon: 'success',
+                            title: 'Deleted successfully'
+                        })
+                    })
+            }
+        }
     }
 </script>
 
 <style scoped>
 
 </style>
+
