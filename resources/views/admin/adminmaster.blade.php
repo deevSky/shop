@@ -12,18 +12,18 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Font Awesome -->
 {{--    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">--}}
-    <!-- Ionicons -->
+<!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- overlayScrollbars -->
 {{--    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">--}}
-    <!-- Google Font: Source Sans Pro -->
+<!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-{{--    <style>--}}
-{{--        .nav-link{--}}
-{{--            color: black;--}}
-{{--            background: dimgrey;--}}
-{{--        }--}}
-{{--    </style>--}}
+    {{--    <style>--}}
+    {{--        .nav-link{--}}
+    {{--            color: black;--}}
+    {{--            background: dimgrey;--}}
+    {{--        }--}}
+    {{--    </style>--}}
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -58,7 +58,8 @@
         <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
             <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false" v-pre>
                     Elmira <span class="caret"></span>
                 </a>
 
@@ -70,7 +71,7 @@
                     </a>
 
                     <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
-                        <input type="hidden" name="_token" value="S9KcCnYRzCyN34ey4mNCi2GBRcsdiVmZ0wFLlZWj">                                    </form>
+                        <input type="hidden" name="_token" value="S9KcCnYRzCyN34ey4mNCi2GBRcsdiVmZ0wFLlZWj"></form>
                 </div>
             </li>
         </ul>
@@ -82,14 +83,20 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="../../index3.html" class="brand-link">
+{{--        <a href="../../index3.html" class="brand-link">--}}
+{{--            <img src="{{ asset('assets/admin/default/admin.JPG') }}"--}}
+{{--                 alt="AdminLTE Logo"--}}
+{{--                 class="brand-image img-circle elevation-3"--}}
+{{--                 style="opacity: .8">--}}
+{{--            <span class="brand-text font-weight-light">{{ Auth::user()->name }}</span>--}}
+{{--        </a>--}}
+        <router-link to="/home" class="nav-link">
             <img src="{{ asset('assets/admin/default/admin.JPG') }}"
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
+                 style="opacity: .8; width: 30px">
             <span class="brand-text font-weight-light">{{ Auth::user()->name }}</span>
-        </a>
-
+        </router-link>
         <!-- Sidebar -->
         <div class="sidebar">
 
@@ -179,9 +186,9 @@
         </section>
 
         <!-- Main content -->
-            <admin-master></admin-master>
-{{--            <home></home>--}}
-        <!-- /.content -->
+        <admin-master></admin-master>
+    {{--            <home></home>--}}
+    <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
@@ -205,7 +212,7 @@
 <script>
     var MyApp = {
         csrfToken: "{{ csrf_token() }}"
-    }
+    };
 </script>
 {{--<!-- jQuery -->--}}
 {{--<script src="{{ asset('../../plugins/jquery/jquery.min.js') }}"></script>--}}

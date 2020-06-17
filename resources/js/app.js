@@ -19,7 +19,7 @@ Vue.use(VueRouter);
 import {routes} from "./routes";
 // Vue.component('home', require('./components/admin/AdminHome').default);
 Vue.component('admin-master', require('./components/admin/AdminMaster').default);
-
+Vue.component('public-master', require('./components/public/PublicMaster').default);
 
 //v-form
 import { Form, HasError, AlertError } from 'vform';
@@ -50,6 +50,15 @@ const toast = Swal.mixin({
 
 window.toast = toast;
 
+//editor
+import 'v-markdown-editor/dist/v-markdown-editor.css';
+import Editor from 'v-markdown-editor';
+Vue.use(Editor);
+
+
+//image
+import UploadImage from 'vue-upload-image';
+
 const router = new VueRouter({
     routes,
     mode: 'history'
@@ -58,5 +67,6 @@ const router = new VueRouter({
 const app = new Vue({
     el: '#app',
     router,
-    store
+    store,
+    UploadImage
 });
