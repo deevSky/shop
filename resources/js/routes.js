@@ -11,7 +11,7 @@ import productCreate from "./components/admin/products/Create";
 import productEdit from "./components/admin/products/Edit";
 
 
-//frontend components
+//public components
 import PublicHome from "./components/public/PublicHome";
 import products from "./components/public/products/Products";
 
@@ -24,7 +24,7 @@ export const routes = [
         component: AdminHome
     },
 
-//categories
+    //categories
     {
         path: '/categories',
         component: Index
@@ -57,7 +57,7 @@ export const routes = [
     },
 
 
-    //frontend views
+    //public views
     {
         path: '/',
         component: PublicHome

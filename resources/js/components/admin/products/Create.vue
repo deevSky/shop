@@ -76,7 +76,7 @@
                     title: '',
                     description: '',
                     photo: '',
-                    categories: ''
+                    categories: []
                 })
             }
 
@@ -101,25 +101,12 @@
 
                         toast.fire({
                             icon: 'success',
-                            title: 'Created in successfully'
+                            title: 'Created successfully'
                         })
                     })
                     .catch(() => {
 
                     })
-
-            },
-
-            changePhoto(event) {
-                let file = event.target.files[0];
-                let reader = new FileReader();
-                reader.onload = event => {
-                    this.form.photo = event.target.result
-                    // console.log(event.target.result)
-                    // console.log(this.form.photo)
-                };
-
-                reader.readAsDataURL(file);
             }
 
         }

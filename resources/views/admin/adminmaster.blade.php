@@ -91,7 +91,8 @@
 {{--            <span class="brand-text font-weight-light">{{ Auth::user()->name }}</span>--}}
 {{--        </a>--}}
         <router-link to="/home" class="nav-link">
-            <img src="{{ asset('assets/admin/default/admin.JPG') }}"
+{{--            <img src="{{ asset('assets/admin/default/admin.JPG') }}"--}}
+            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-260nw-393536320.jpg"
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8; width: 30px">

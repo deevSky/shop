@@ -58,8 +58,8 @@
                     <div class="span12">
                         <div class="headnav">
                             <ul>
-                                <li><a href="http://shop.test/register" ><i class="icon-user"></i> Sign up</a></li>
-                                <li><a href="http://shop.test/login" >Sign in</a></li>
+                                <li><a href="http://127.0.0.1:8000/register" ><i class="icon-user"></i> Sign up</a></li>
+                                <li><a href="http://127.0.0.1:8000/login" >Sign in</a></li>
                             </ul>
                         </div>
                         <!-- Signup Modal -->

@@ -68,7 +68,7 @@
 
                         toast.fire({
                             icon: 'success',
-                            title: 'Edited in successfully'
+                            title: 'Edited successfully'
                         })
                     })
                     .catch(() => {

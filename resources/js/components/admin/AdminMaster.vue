@@ -5,7 +5,6 @@
 </template>
 
 <script>
-    import Index from "./categories/Index";
     export default {
         name: "AdminMaster"
     }

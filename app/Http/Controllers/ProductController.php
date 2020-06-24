@@ -26,40 +26,16 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-//        dd(66666666666666);
-
         $this->validate($request, [
             'title' => 'required|min:2|max:50',
             'description' => 'required|min:2|max:500'
         ]);
 
-        $strpos = strpos($request->photo, ';');
-        $sub = substr($request->photo, 0, $strpos);
-        $ex = explode('/', $sub)[1];
-        $photo_name = time() . "." . $ex;
-        $img = Image::make($request->photo)->resize(300, 300);
-        $path = public_path() . "/uploadImage/";
-        $img->save($path.$photo_name);
 
         $product = new Product();
         $product->title = $request->title;
         $product->description = $request->description;
         $product->save();
-//
-//        $input = $request->all();
-//        if ($request->hasFile('image')) {
-//
-//
-//            $file_extension = $product->id . '.jpg';
-//            $product->image = $file_extension;
-//            $product->save();
-//            $destination_path = public_path() . '\images';
-//            $filename = $file_extension;
-//            $request->file('image')->move($destination_path, $filename);
-//            $input['image'] = $filename;
-//        }
-//
-
 
         $product->category()->sync($request->categories, false);
         return ['message' => 'ok'];
