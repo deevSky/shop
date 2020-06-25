@@ -1,16 +1,16 @@
 require('./bootstrap');
 window.Vue = require('vue');
 
-// Vuex
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex);
+// // Vuex
+// import Vue from 'vue';
+// import Vuex from 'vuex';
+// Vue.use(Vuex);
 
 
-import storeData from './store/index';
-const store =  new Vuex.Store(
-    storeData
-    );
+import store from './store/index';
+// const store =  new Vuex.Store(
+//     storeData
+//     );
 
 // vue-router
 import VueRouter from 'vue-router';

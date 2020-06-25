@@ -1,48 +1,15 @@
-export default {
-    name: 'storeData',
+import Vue from 'vue';
+import Vuex from 'vuex';
+Vue.use(Vuex);
 
-    state: {
-        category: [],
-        product: []
-    },
+import category from "./moduls/category";
+import product from "./moduls/product";
 
-    getters: {
-        getCategory(state) {
-            return state.category
-        },
-
-        getProduct(state) {
-            return state.product
-        }
-    },
-
-    mutations: {
-        categories(state,data){
-            return state.category = data;
-        },
-
-        products(state,data){
-            return state.product = data;
-        }
-    },
-
-    actions: {
-        allCategory(context) {
-            axios.get('/category')
-                .then((response) => {
-                    console.log(response.data.categories)
-                    context.commit('categories', response.data.categories)
-                })
-        },
-
-        allProducts(context){
-            axios.get('/product')
-                .then((response) => {
-                    console.log(response.data.products)
-                    context.commit('products', response.data.products)
-                })
-        }
+export default  new Vuex.Store({
+    modules: {
+        category,
+        product
     }
+});
 
 
-}

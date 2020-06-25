@@ -22,6 +22,14 @@ class CategoryController extends Controller
         ],200);
     }
 
+    public function categories()
+    {
+        $categories = Category::all();
+        return view('public/index')->with([
+            'categories' => $categories
+        ]);
+    }
+
     public function create(Request $request)
     {
         $this->validate($request, [
