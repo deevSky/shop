@@ -58,8 +58,8 @@
                     <div class="span12">
                         <div class="headnav">
                             <ul>
-                                <li><a href="http://127.0.0.1:8000/register" ><i class="icon-user"></i> Sign up</a></li>
-                                <li><a href="http://127.0.0.1:8000/login" >Sign in</a></li>
+                                <li><a href="http://127.0.0.1:8000/register"><i class="icon-user"></i> Sign up</a></li>
+                                <li><a href="http://127.0.0.1:8000/login">Sign in</a></li>
                             </ul>
                         </div>
                         <!-- Signup Modal -->
@@ -181,16 +181,18 @@
                                     <ul class="nav topnav">
                                         <li class="dropdown active">
                                             <a href="/">Home <i class="icon-angle-down"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="/">Public</a></li>
-                                                <li><a href="/home">Admin home</a></li>
-                                            </ul>
+                                            @if(auth()->user()->role == 1)
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="/">Public</a></li>
+                                                    <li><a href="/home">Admin home</a></li>
+                                                </ul>
+                                            @endif
                                         </li>
                                         <li class="dropdown">
                                             <a href="#">Cakes <i class="icon-angle-down"></i></a>
                                             <ul class="dropdown-menu">
                                                 @foreach($categories as $category)
-                                                <li><a href="#">{{$category->category_name}}</a></li>
+                                                    <li><a href="#">{{$category->category_name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
