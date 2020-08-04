@@ -165,13 +165,13 @@
                                     <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
                                         <!-- Fancybox - Gallery Enabled - Title - Full Image -->
                                         <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City"
-                                           href="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg">
+                                           href="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg">
                                             <span class="overlay-img"></span>
                                             <span class="overlay-img-thumb font-icon-plus"></span>
                                         </a>
                                         <!-- Thumb Image and Description -->
                                         <img
-                                            src="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg"
+                                            src="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg"
                                             alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                                     </li>
                                     <!-- End Item Project -->
@@ -179,13 +179,13 @@
                                     <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
                                         <!-- Fancybox - Gallery Enabled - Title - Full Image -->
                                         <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office"
-                                           href="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg">
+                                           href="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg">
                                             <span class="overlay-img"></span>
                                             <span class="overlay-img-thumb font-icon-plus"></span>
                                         </a>
                                         <!-- Thumb Image and Description -->
                                         <img
-                                            src="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg"
+                                            src="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg"
                                             alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                                     </li>
                                     <!-- End Item Project -->
@@ -194,26 +194,26 @@
                                         <!-- Fancybox - Gallery Enabled - Title - Full Image -->
                                         <a class="hover-wrap fancybox" data-fancybox-group="gallery"
                                            title="The Mountains"
-                                           href="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg">
+                                           href="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg">
                                             <span class="overlay-img"></span>
                                             <span class="overlay-img-thumb font-icon-plus"></span>
                                         </a>
                                         <!-- Thumb Image and Description -->
                                         <img
-                                            src="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg"
+                                            src="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg"
                                             alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                                     </li>
                                     <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
                                         <!-- Fancybox - Gallery Enabled - Title - Full Image -->
                                         <a class="hover-wrap fancybox" data-fancybox-group="gallery"
                                            title="The Mountains"
-                                           href="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg">
+                                           href="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg">
                                             <span class="overlay-img"></span>
                                             <span class="overlay-img-thumb font-icon-plus"></span>
                                         </a>
                                         <!-- Thumb Image and Description -->
                                         <img
-                                            src="https://livforcake.com/wp-content/uploads/2017/06/vanilla-cake-thumb.jpg"
+                                            src="https://www.epicentrofestival.com/wp-content/uploads/2019/12/Watercolor-Cake-Logo-Png-720x856.jpg"
                                             alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                                     </li>
                                     <!-- End Item Project -->
@@ -237,49 +237,49 @@
                         <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="https://expandgh.com/wp-content/uploads/2018/01/brand_name.jpg"
+                                    <img src="https://cdn.shopify.com/s/files/1/0023/6797/9619/products/20200530_151945_1024x1024.jpg?v=1591126046"
                                          class="client-logo" alt=""/>
                                 </a>
                             </li>
