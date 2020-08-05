@@ -199,12 +199,15 @@
                                             @endif
                                         </li>
                                         <li class="dropdown">
-                                            <a href="#">Cakes <i class="icon-angle-down"></i></a>
+                                            <a href="#">Choose category <i class="icon-angle-down"></i></a>
                                             <ul class="dropdown-menu">
                                                 @foreach($categories as $category)
                                                     <li><a href="#">{{$category->category_name}}</a></li>
                                                 @endforeach
                                             </ul>
+                                        </li>
+                                        <li>
+                                            <router-link to="/all-products">All</router-link>
                                         </li>
                                         <li class="dropdown">
                                             <a href="#">Pages <i class="icon-angle-down"></i></a>
@@ -223,10 +226,6 @@
                                                 <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
                                                 <li><a href="portfolio-detail.html">Portfolio detail</a></li>
                                             </ul>
-                                        </li>
-
-                                        <li>
-                                            <router-link to="/all-products">Products</router-link>
                                         </li>
                                         <li>
                                             <a href="contact.html">

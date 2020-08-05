@@ -1,24 +1,14 @@
 <template>
 <span id="products">
-    <section id="inner-headline">
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="inner-heading">
-              <h2>Our products</h2>
-            </div>
-          </div>
-          <div class="span8">
-            <ul class="breadcrumb">
+    <section id="content">
+        <div class="bottom-article">
+                <ul class="breadcrumb">
               <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
               <li><a href="#">Blog</a><i class="icon-angle-right"></i></li>
               <li class="active">Products</li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="content">
+                  </div>
+
       <div class="container">
         <div class="row">
           <div class="span8">
@@ -55,7 +45,7 @@
                 <div class="span8">
                   <div class="post-video">
                     <div class="post-heading">
-                      <h3><a href="#">Amazing video post format here</a></h3>
+                      <h3><a href="#">Amazing video of creating our cakes</a></h3>
                     </div>
                     <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/1q3lIaxaqmg" frameborder="0"
@@ -67,15 +57,6 @@
                     Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
                     ea. Usu ea justo malis, pri quando everti electram ei.
                   </p>
-                  <div class="bottom-article">
-                    <ul class="meta-post">
-                      <li><i class="icon-calendar"></i><a href="#"> 00.00.00</a></li>
-                      <li><i class="icon-user"></i><a href="#"> Admin</a></li>
-                      <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-                      <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
-                    </ul>
-                    <a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
-                  </div>
                 </div>
               </div>
             </article>
