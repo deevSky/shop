@@ -24,23 +24,16 @@
           <div class="span8">
             <article>
               <div class="row" v-for="product in getAllProducts" :key="product.id">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-6">
-
+                <div class="span8">
+                  <div class="post-image">
                     <div class="post-heading">
                         <h3><a href="#">{{ product.title}}</a></h3>
                     </div>
                     <img style="height: 300px" :src="`../images/${product.image}`" alt="" />
                   </div>
-
-
-                        <div class="col-md-2">
-                              <p>
+                  <p>
                    {{ product.description }}
                   </p>
-                        </div>
-                    </div>
                   <div class="bottom-article">
                     <ul class="meta-post">
                       <li><i class="icon-calendar"></i><a href="#"> {{ getHumanDate(product.created_at) }} </a></li>
@@ -76,6 +69,7 @@
                   </p>
                   <div class="bottom-article">
                     <ul class="meta-post">
+                      <li><i class="icon-calendar"></i><a href="#"> 00.00.00</a></li>
                       <li><i class="icon-user"></i><a href="#"> Admin</a></li>
                       <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
                       <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
