@@ -64,14 +64,9 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="http://127.0.0.1:8000/logout"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                    <a class="dropdown-item" href="/logout">
                         Logout
                     </a>
-
-                    <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
-                        <input type="hidden" name="_token" value="S9KcCnYRzCyN34ey4mNCi2GBRcsdiVmZ0wFLlZWj"></form>
                 </div>
             </li>
         </ul>
@@ -169,10 +164,7 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Blank Page</h1>
-                    </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item">
                                 <router-link to="/home">

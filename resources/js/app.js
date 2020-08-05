@@ -54,6 +54,10 @@ import 'v-markdown-editor/dist/v-markdown-editor.css';
 import Editor from 'v-markdown-editor';
 Vue.use(Editor);
 
+//moment
+import moment from 'moment';
+window.moment = moment;
+Vue.use(moment);
 
 //image
 import UploadImage from 'vue-upload-image';
@@ -67,5 +71,5 @@ const app = new Vue({
     el: '#app',
     router,
     store,
-    UploadImage
+    UploadImage,
 });

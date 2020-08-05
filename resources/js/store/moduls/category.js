@@ -16,11 +16,11 @@ export default {
     },
 
     actions: {
-        allProducts(context){
-            axios.get('/product')
+        allCategories(context){
+            axios.get('/category')
                 .then((response) => {
-                    console.log(response.data.products)
-                    context.commit('products', response.data.products)
+                    console.log(response.data.categories)
+                    context.commit('categories', response.data.categories)
                 })
         }
     }

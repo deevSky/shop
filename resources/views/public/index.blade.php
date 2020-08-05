@@ -57,10 +57,20 @@
                 <div class="row nomargin">
                     <div class="span12">
                         <div class="headnav">
-                            <ul>
-                                <li><a href="http://127.0.0.1:8000/register"><i class="icon-user"></i> Sign up</a></li>
-                                <li><a href="http://127.0.0.1:8000/login">Sign in</a></li>
-                            </ul>
+                            @if(auth()->user())
+                                <ul>
+                                    <li><a href="/"><i class="icon-user"></i> Home </a></li>
+                                    <li>
+                                        <a href="/logout">
+                                        {{ auth()->user()->name }} >
+                                        </a>
+                                    </li>
+                            @else
+                                <ul>
+                                    <li><a href="http://127.0.0.1:8000/register"><i class="icon-user"></i> Sign up</a></li>
+                                    <li><a href="http://127.0.0.1:8000/login">Sign in</a></li>
+                                </ul>
+                            @endif
                         </div>
                         <!-- Signup Modal -->
                         <div id="mySignup" class="modal styled hide fade" tabindex="-1" role="dialog"
@@ -181,7 +191,7 @@
                                     <ul class="nav topnav">
                                         <li class="dropdown active">
                                             <a href="/">Home <i class="icon-angle-down"></i></a>
-                                            @if(auth()->user()->role == 1)
+                                            @if(auth()->user() && auth()->user()->role == 1)
                                                 <ul class="dropdown-menu">
                                                     <li><a href="/">Public</a></li>
                                                     <li><a href="/home">Admin home</a></li>

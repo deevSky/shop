@@ -10,13 +10,14 @@ Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', 'CategoryController@categories');
 
 Route::group(['middleware' => ['auth']], function(){
 
 //category
     Route::get('/category', 'CategoryController@index');
-    Route::post('/create', 'CategoryController@create');
+    Route::post('/category/create', 'CategoryController@create');
     Route::get('/category/{category}/edit', 'CategoryController@edit');
     Route::post('/category/{category}/update', 'CategoryController@update');
     Route::get('/category/{category}/delete', 'CategoryController@destroy');
@@ -29,6 +30,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/product/{product}/delete', 'ProductController@destroy');
 
 
-    Route::get('/{anypath}', 'HomeController@index')->where('path', '.*');
+    Route::get('/logout', 'HomeController@logout');
 
+
+    Route::get('/{anypath}', 'HomeController@index')->where('path', '.*');
 });

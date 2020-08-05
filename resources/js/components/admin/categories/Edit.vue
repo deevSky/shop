@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h2>This is category {{ this.$route.params.categoryId }}</h2>
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -17,8 +16,10 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputCategory">Edit Category</label>
-                                        <input type="text" class="form-control" id="exampleInputCategory"
-                                               placeholder="New Category" name="category_name"
+                                        <input type="text"
+                                               class="form-control"
+                                               id="exampleInputCategory"
+                                               name="category_name"
                                                v-model="form.category_name"
                                                :class="{ 'is-invalid': form.errors.has('category_name') }">
                                         <has-error :form="form" field="category_name"></has-error>

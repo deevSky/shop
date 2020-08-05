@@ -25,19 +25,13 @@
 
                                     <div class="form-group">
                                         <label>Add New Description</label>
-                                        <markdown-editor  name="description" v-model="form.description" :class="{ 'is-invalid': form.errors.has('description') }"></markdown-editor>
+                                        <textarea type="text" class="form-control"
+                                                  placeholder="New description" name="description"
+                                                  v-model="form.description"
+                                                  :class="{ 'is-invalid': form.errors.has('title') }">
+                                        </textarea>
                                         <has-error :form="form" field="description"></has-error>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="example">Add New photo</label>
-                                        <input @change="changePhoto($event)" type="file" class="form-control" id="example"
-                                               placeholder="New photo" name="photo"
-                                               :class="{ 'is-invalid': form.errors.has('photo') }">
-                                        <img :src="form.photo" alt="" width="100px">
-                                        <has-error :form="form" field="photo"></has-error>
-                                    </div>
-
 
                                     <div class="form-group">
                                         <label for="aexampleInputProduct">Add New Product</label>
@@ -48,15 +42,24 @@
                                             </option>
                                         </select>
                                         <has-error :form="form" field="categories"></has-error>
-
                                     </div>
+
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="example">Add New photo</label>-->
+<!--                                        <input  type="file" class="form-control"-->
+<!--                                               id="example"-->
+<!--                                               placeholder="New photo" name="image"-->
+<!--                                               :class="{ 'is-invalid': form.errors.has('image') }">-->
+<!--                                        <img :src="form.image" alt="" width="100px">-->
+<!--                                        <has-error :form="form" field="image"></has-error>-->
+<!--                                    </div>-->
+
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Add</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
-
                     </div>
 
                 </div>
@@ -82,7 +85,7 @@
 
         },
         mounted() {
-            this.$store.dispatch('allCategory')
+            this.$store.dispatch('allCategories')
         },
 
 

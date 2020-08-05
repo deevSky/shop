@@ -32,7 +32,7 @@
                                     <tr v-for="(product, index) in getAllProducts" :key="product.id">
                                         <td>{{ index + 1 }}</td>
                                         <td>{{ product.title }}</td>
-                                        <td v-if="product.description.length >= 10">{{ product.description |
+                                        <td v-if="product.description.length >= 25">{{ product.description |
                                             limitLength(10, '...')}}
                                         </td>
                                         <td v-else>{{ product.description }}</td>
@@ -47,8 +47,12 @@
 
                                         </td>
                                         <td>
-                                            <a href="" @click.prevent="deleteProduct(product.id)">Delete</a>
-                                            <router-link :to="`/product-edit/${product.id}`">Edit</router-link>
+                                            <a href="" @click.prevent="deleteProduct(product.id)">
+                                                <i class="ml-3 fas fa-trash-alt fa-lg"></i>
+                                            </a>
+                                            <router-link :to="`/product-edit/${product.id}`">
+                                                <i class="ml-3 fas fa-edit fa-lg"></i>
+                                            </router-link>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -78,7 +82,7 @@
 
         methods: {
             ourImage(img) {
-return "uploadImage" + img;
+                return "uploadImage" + img;
             },
 
             deleteProduct(id) {

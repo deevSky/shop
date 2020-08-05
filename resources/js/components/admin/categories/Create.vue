@@ -54,7 +54,7 @@
 
         methods: {
             addCategory() {
-                this.form.post('/create')
+                this.form.post('/category/create')
                     .then((response) => {
                         this.$router.push('/categories')
 

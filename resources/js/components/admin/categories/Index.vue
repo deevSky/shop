@@ -32,8 +32,12 @@
                                         <td>{{ category.category_name }}</td>
                                         <td>{{ category.created_at | timeformat }}</td>
                                         <td>
-                                            <router-link :to="`/category-edit/${category.id}`">Edit</router-link>
-                                            <a href="" @click.prevent="deleteCategory(category.id)">Delete</a>
+                                            <router-link :to="`/category-edit/${category.id}`">
+                                                <i class="ml-3 fas fa-edit fa-lg"></i>
+                                            </router-link>
+                                            <a href="" @click.prevent="deleteCategory(category.id)">
+                                                <i class="ml-3 fas fa-trash-alt fa-lg"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -52,7 +56,7 @@
         name: "Index",
 
         mounted() {
-            this.$store.dispatch('allCategory')
+            this.$store.dispatch('allCategories')
         },
 
         computed: {
@@ -65,7 +69,7 @@
             deleteCategory(id){
                 axios.get('category/' + id + '/delete' )
                     .then(() => {
-                        this.$store.dispatch('allCategory')
+                        this.$store.dispatch('allCategories')
                         toast.fire({
                             icon: 'success',
                             title: 'Deleted successfully'

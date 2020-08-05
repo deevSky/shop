@@ -31,10 +31,10 @@ class ProductController extends Controller
             'description' => 'required|min:2|max:500'
         ]);
 
-
         $product = new Product();
         $product->title = $request->title;
         $product->description = $request->description;
+
         $product->save();
 
         $product->category()->sync($request->categories, false);
@@ -53,7 +53,9 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        //
+        return response()->json([
+            'product' => $product
+        ], 200);
     }
 
     /**
@@ -65,7 +67,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $this->validate($request, [
+            'title' => 'sometimes|min:2|max:50',
+            'description' => 'sometimes|min:2|max:50'
+        ]);
+
+        $product->category()->detach();
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->category()->sync($request->categories, false);
+        $product->save();
     }
 
     /**
