@@ -48,10 +48,12 @@
                                             src="https://i.pinimg.com/736x/4a/bc/c0/4abcc00427dbb86ee5da8270b52204f8.jpg"
                                             alt="">
                                      <input v-model="form.text" name="comment" type="text" placeholder="Add comment"
-                                            style="margin-top:10px">
+                                            style="margin-top:10px" :class="{ 'is-invalid': form.errors.has('text') }">
+
                                     <button type="submit" class="btn btn-primary" style="background: #cc83b2;">
                                         <i class="icon-envelope"></i>
                                     </button>
+                                      <has-error :form="form" field="text"></has-error>
                                   </form>
                              </div>
                       </div>

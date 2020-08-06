@@ -27,6 +27,10 @@ class CommentController extends Controller
      */
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'text' => 'required|min:2|max:50',
+        ]);
+
         $comment = new Comment();
         $comment->text = $request->text;
         $comment->user_id = $request->user()->id;
