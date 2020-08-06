@@ -13,11 +13,12 @@ class CreateCommentsProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments_products', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
             $table->text('text');
+            $table->integer('status');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -32,6 +33,6 @@ class CreateCommentsProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments_products');
+        Schema::dropIfExists('comments.');
     }
 }
