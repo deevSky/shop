@@ -33,5 +33,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/logout', 'HomeController@logout');
 
 
-    Route::get('/{anypath}', 'HomeController@index')->where('path', '.*');
+    Route::get('/{anypath}', function(){
+        return redirect()->back();
+    });
 });

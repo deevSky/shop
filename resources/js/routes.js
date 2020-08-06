@@ -5,7 +5,7 @@ import Index from "./components/admin/categories/Index";
 import Create from "./components/admin/categories/Create";
 import EditCategory from "./components/admin/categories/Edit";
 
-//post
+//products
 import productsIndex from "./components/admin/products/Index";
 import productCreate from "./components/admin/products/Create";
 import productEdit from "./components/admin/products/Edit";
@@ -14,6 +14,7 @@ import productEdit from "./components/admin/products/Edit";
 //public components
 import PublicHome from "./components/public/PublicHome";
 import products from "./components/public/products/Products";
+import comments from "./components/public/Comments";
 
 
 
@@ -66,5 +67,9 @@ export const routes = [
     {
         path: '/all-products',
         component: products
+    },
+    {
+        path: '/comments',
+        component: comments
     },
 ];

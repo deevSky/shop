@@ -1,13 +1,13 @@
 <template>
 <span id="products">
     <section id="content">
-        <div class="bottom-article">
-                <ul class="breadcrumb">
-              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
-              <li><a href="#">Blog</a><i class="icon-angle-right"></i></li>
-              <li class="active">Products</li>
-            </ul>
-                  </div>
+<!--        <div class="bottom-article">-->
+        <!--                <ul class="breadcrumb">-->
+        <!--              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>-->
+        <!--              <li><a href="#">Blog</a><i class="icon-angle-right"></i></li>-->
+        <!--              <li class="active">Products</li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
 
       <div class="container">
         <div class="row">
@@ -19,7 +19,7 @@
                     <div class="post-heading">
                         <h3><a href="#">{{ product.title}}</a></h3>
                     </div>
-                    <img style="height: 300px" :src="`../images/${product.image}`" alt="" />
+                    <img style="height: 300px" :src="`../images/${product.image}`" alt=""/>
                   </div>
                   <p>
                    {{ product.description }}
@@ -32,10 +32,28 @@
                           <a href="#">{{ category.category_name }}</a>
                       </li>
                       <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-                      <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
+                      <li @click="showComment = !showComment" class="product-comment"><i class="icon-comments"></i>4 Comments</li>
                     </ul>
                     <a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
                   </div>
+                     <div class="row" v-if="showComment">
+                          <div class="comment_block">
+                           <div   v-for="comment in comments">
+                                  <div>
+                                   <img style="width: 40px; height: 40px; border-radius: 50%"
+                                        src="https://i.pinimg.com/736x/4a/bc/c0/4abcc00427dbb86ee5da8270b52204f8.jpg"
+                                        alt="">
+                                    <span class="inline-block">Anna B.</span> |
+                                    <span class="inline-block">06.08.2020</span>
+                              </div>
+                              <div style="margin-top: 10px">
+                                  <p>{{ comment }}</p>
+                              </div>
+                           </div>
+                              <input v-model="newComment" name="comment" type="text" placeholder="Add comment" style="margin-top:10px">
+                              <button @click="addComment()" type="button" class="btn btn-primary"><i class="icon-envelope"></i></button>
+                      </div>
+                      </div>
                 </div>
               </div>
             </article>
@@ -49,7 +67,8 @@
                     </div>
                     <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/1q3lIaxaqmg" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
                     </iframe>
                     </div>
                   </div>
@@ -85,21 +104,21 @@
                 <h5 class="widgetheading">Latest posts</h5>
                 <ul class="recent">
                   <li>
-                    <img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
+                    <img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt=""/>
                     <h6><a href="#">Lorem ipsum dolor sit</a></h6>
                     <p>
                       Mazim alienum appellantur eu cu ullum officiis pro pri
                     </p>
                   </li>
                   <li>
-                    <a href="#"><img src="img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" /></a>
+                    <a href="#"><img src="img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt=""/></a>
                     <h6><a href="#">Maiorum ponderum eum</a></h6>
                     <p>
                       Mazim alienum appellantur eu cu ullum officiis pro pri
                     </p>
                   </li>
                   <li>
-                    <a href="#"><img src="img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" /></a>
+                    <a href="#"><img src="img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt=""/></a>
                     <h6><a href="#">Et mei iusto dolorum</a></h6>
                     <p>
                       Mazim alienum appellantur eu cu ullum officiis pro pri
@@ -130,6 +149,16 @@
     export default {
         name: "Products",
 
+        data() {
+            return {
+                showComment: false,
+                comments: [
+                    'This is amazing cake!!!!!!',
+                ],
+                newComment: ''
+            }
+        },
+
         mounted() {
             this.$store.dispatch('allProducts')
         },
@@ -141,13 +170,28 @@
         },
 
         methods: {
-            getHumanDate : function (date) {
+            getHumanDate: function (date) {
                 return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
+            },
+
+            addComment: function(){
+                this.comments.push(this.newComment);
+                this.newComment = '';
+                return this.comments;
             }
         }
     }
 </script>
 
 <style scoped>
+    .product-comment:hover {
+        color: #cc83b2;
+        text-decoration: underline;
+        cursor: pointer;
+    }
 
+    .comment_block {
+        margin-top: 70px;
+        margin-left: 29px;
+    }
 </style>

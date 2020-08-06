@@ -243,6 +243,7 @@
         <!-- end header -->
 
         <public-master></public-master>
+        <comment></comment>
         <footer>
             <div class="container">
                 <div class="row">
