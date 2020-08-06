@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
@@ -19,8 +20,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('category')->orderBy('id', 'DESC')->limit('10')->get();
+        $comments = Comment::all();
         return response()->json([
-            'products' => $products
+            'products' => $products,
+            'comments' => $comments
         ], 200);
     }
 

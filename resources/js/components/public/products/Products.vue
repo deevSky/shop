@@ -1,14 +1,6 @@
 <template>
 <span id="products">
     <section id="content">
-<!--        <div class="bottom-article">-->
-        <!--                <ul class="breadcrumb">-->
-        <!--              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>-->
-        <!--              <li><a href="#">Blog</a><i class="icon-angle-right"></i></li>-->
-        <!--              <li class="active">Products</li>-->
-        <!--            </ul>-->
-        <!--        </div>-->
-
       <div class="container">
         <div class="row">
           <div class="span8">
@@ -32,26 +24,36 @@
                           <a href="#">{{ category.category_name }}</a>
                       </li>
                       <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-                      <li @click="showComment = !showComment" class="product-comment"><i class="icon-comments"></i>4 Comments</li>
+                      <li @click="showComment = !showComment" class="product-comment"><i class="icon-comments"></i>Comments</li>
                     </ul>
                     <a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
                   </div>
                      <div class="row" v-if="showComment">
                           <div class="comment_block">
-                           <div   v-for="comment in comments">
-                                  <div>
-                                   <img style="width: 40px; height: 40px; border-radius: 50%"
+                           <div v-for="comment in getAllComments">
+                                  <div style="margin-top: 15px">
+                                   <img style="width: 35px; height: 35px; border-radius: 50%"
                                         src="https://i.pinimg.com/736x/4a/bc/c0/4abcc00427dbb86ee5da8270b52204f8.jpg"
                                         alt="">
-                                    <span class="inline-block">Anna B.</span> |
+                                    <span style="margin-left: 10px">Anna B.  |</span>
                                     <span class="inline-block">06.08.2020</span>
                               </div>
-                              <div style="margin-top: 10px">
-                                  <p>{{ comment }}</p>
+                              <div style="margin-top: 10px; border-bottom: 1px dotted rgb(212 212 212)">
+                                  <p>{{ comment.text }}</p>
                               </div>
                            </div>
-                              <input v-model="newComment" name="comment" type="text" placeholder="Add comment" style="margin-top:10px">
-                              <button @click="addComment()" type="button" class="btn btn-primary"><i class="icon-envelope"></i></button>
+                             <div style="margin-top: 15px">
+                                  <form role="form" @submit.prevent="addComment()">
+                                       <img style="width: 30px; height: 30px; border-radius: 50%"
+                                            src="https://i.pinimg.com/736x/4a/bc/c0/4abcc00427dbb86ee5da8270b52204f8.jpg"
+                                            alt="">
+                                     <input v-model="form.text" name="comment" type="text" placeholder="Add comment"
+                                            style="margin-top:10px">
+                                    <button type="submit" class="btn btn-primary" style="background: #cc83b2;">
+                                        <i class="icon-envelope"></i>
+                                    </button>
+                                  </form>
+                             </div>
                       </div>
                       </div>
                 </div>
@@ -104,21 +106,21 @@
                 <h5 class="widgetheading">Latest posts</h5>
                 <ul class="recent">
                   <li>
-                    <img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt=""/>
+                    <img src="" class="pull-left" alt=""/>
                     <h6><a href="#">Lorem ipsum dolor sit</a></h6>
                     <p>
                       Mazim alienum appellantur eu cu ullum officiis pro pri
                     </p>
                   </li>
                   <li>
-                    <a href="#"><img src="img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt=""/></a>
+                    <a href="#"><img src="" class="pull-left" alt=""/></a>
                     <h6><a href="#">Maiorum ponderum eum</a></h6>
                     <p>
                       Mazim alienum appellantur eu cu ullum officiis pro pri
                     </p>
                   </li>
                   <li>
-                    <a href="#"><img src="img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt=""/></a>
+                    <a href="#"><img src="" class="pull-left" alt=""/></a>
                     <h6><a href="#">Et mei iusto dolorum</a></h6>
                     <p>
                       Mazim alienum appellantur eu cu ullum officiis pro pri
@@ -155,17 +157,25 @@
                 comments: [
                     'This is amazing cake!!!!!!',
                 ],
-                newComment: ''
+                newComment: '',
+                form: new Form({
+                    text: '',
+                })
             }
         },
 
         mounted() {
             this.$store.dispatch('allProducts')
+            this.$store.dispatch('allComments')
         },
 
         computed: {
             getAllProducts() {
                 return this.$store.getters.getProduct
+            },
+
+            getAllComments() {
+                return this.$store.getters.getComment
             }
         },
 
@@ -173,12 +183,28 @@
             getHumanDate: function (date) {
                 return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
             },
+            addComment() {
+                this.form.post('/comment/create')
+                    .then((response) => {
+                        this.newComment = ''
+                        this.$router.push('/all-products')
 
-            addComment: function(){
-                this.comments.push(this.newComment);
-                this.newComment = '';
-                return this.comments;
-            }
+                        toast.fire({
+                            icon: 'success',
+                            title: 'Created in successfully'
+                        })
+                    })
+                    .catch(() => {
+
+                    })
+            },
+
+            // addComment: function () {
+            //     if (this.newComment != '') {
+            //         this.comments.push(this.newComment);
+            //         this.newComment = '';
+            //     }
+            // }
         }
     }
 </script>

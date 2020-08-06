@@ -78,7 +78,7 @@
                 </div>
             </div>
         </section>
-        <section id="content">
+        <section id="content" style="margin-top: 60px">
             <div class="container">
                 <div class="row">
                     <div class="span12">
